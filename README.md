@@ -1,14 +1,14 @@
-# API Gateway Terraform
+# Cognito
 
 ## Descrição
 
-Esse repositório contém os códigos Terraform de Api Gateway na AWS utilizada na fase do techchallenge.
+Esse repositório contém os códigos Terraform de Cognito na AWS utilizada na fase do techchallenge.
 
 Todo provisionamento foi feito asssumindo-se que AWS Academy está sendo utilizado.  AWS Academy não permite a criação de IAM roles ou qualquer outro recurso relacioado a AWS IAM. Sendo assim, em todos os módulos é utilizado o role LabRole pre-existente na AWS Academy.
 
 As seguintes tarefas são realizadas por esse código Terradorm:
 
-* Através do módulo api-gateway: Provisionamento da infra da rede (VPC, subnet, Internet Gateway, route table e NAT)
+* Através do módulo Cognito: Provisionamento o cognito com um pool de usuários e um client id para autenticação de usuários.
 
 ## Este repositório NÃO contém pipeline de destroy, pipe de destroy está no repositório de infraestrutura.
 
@@ -42,13 +42,4 @@ terraform init
 7. Execute o seguinte comando de deploy da aplicação:
 ```bash
   terraform destroy
-```
-
-### Lembre-se de executar 'terraform destroy' ao final dos testes
-
-## Obtendo ip do Api Gateway
-
-1. Execute o seguinte comando para obter o ip do Api Gateway
-```bash
-aws apigatewayv2 get-apis
 ```
