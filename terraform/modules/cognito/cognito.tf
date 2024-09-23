@@ -19,7 +19,7 @@ resource "aws_cognito_user_pool" "user_pool" {
 
 # Configuring Cognito domain
 resource "aws_cognito_user_pool_domain" "auth_domain" {
-  domain = "${var.project_name}-auth"
+  domain = "${var.project_name}-auth-new"
   user_pool_id = aws_cognito_user_pool.user_pool.id
 }
 
