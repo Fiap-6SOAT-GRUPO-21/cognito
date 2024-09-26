@@ -17,9 +17,16 @@ resource "aws_cognito_user_pool" "user_pool" {
   }
 }
 
+resource "random_string" "domain_suffix" {
+  length  = 6
+  special = false
+  upper   = false
+}
+
+
 # Configuring Cognito domain
 resource "aws_cognito_user_pool_domain" "auth_domain" {
-  domain = "${var.project_name}-auth-new"
+  domain       = "${var.project_name}-auth-${random_string.domain_suffix.result}"
   user_pool_id = aws_cognito_user_pool.user_pool.id
 }
 
